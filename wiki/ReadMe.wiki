@@ -13,6 +13,8 @@ The library is easy to use.
   *  Get the Google DataTable JSON representation of your System.Data.DataTable using the library as shown.
   *  Initialize a Google DataTable using the JSON using a ClientScriptBlock and a StreamReader.
   *  Pass the Google DataTable to the Visualization API as [http://code.google.com/apis/visualization/documentation/ documented by Google].
+
+
 {{{
 <%@ Page Language="C#" %>
 
@@ -75,4 +77,6 @@ The library is easy to use.
 </body>
 </html>
 }}}
+
+
 See http://www.bortosky.com/samples/visualization.aspx for an on-line sample in action.
