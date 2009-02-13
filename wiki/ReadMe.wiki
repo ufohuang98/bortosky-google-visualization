@@ -1,7 +1,6 @@
 ﻿#summary Usage and other information
 #labels Phase-Implementation
 
-
 = Introduction =
 
 
