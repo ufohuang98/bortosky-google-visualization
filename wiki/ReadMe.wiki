@@ -1,6 +1,7 @@
 #summary Usage and other information
 #labels Phase-Implementation
 
+
 = Introduction =
 
 
@@ -12,126 +13,71 @@ The library is easy to use.
   *  Get the Google DataTable JSON representation of your System.Data.DataTable using the library as shown.
   *  Initialize a Google DataTable using the JSON using a ClientScriptBlock and a StreamReader.
   *  Pass the Google DataTable to the Visualization API as [http://code.google.com/apis/visualization/documentation/ documented by Google].
-
-
+== Code Sample ==
+A sample ASPX page is also included in the binary download.
 
 {{{
-
 <%@ Page Language="C#" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <script runat="server">
 
-
     protected void Page_Load(object sender, EventArgs e)
-
     {
-
         Bortosky.Google.Visualization.GoogleDataTable gdt = new Bortosky.Google.Visualization.GoogleDataTable(this.ProgrammingTable);
-
         using (System.IO.MemoryStream mem = new System.IO.MemoryStream())
-
         {
-
             gdt.WriteJson(mem);
-
             mem.Position = 0;
-
             System.IO.StreamReader sr = new System.IO.StreamReader(mem);
-
             Page.ClientScript.RegisterStartupScript(this.GetType(), "vis", string.Format("var fundata = {0}", sr.ReadToEnd()), true);
-
             sr.Close();
-
         }
-
     }
-
     protected System.Data.DataTable ProgrammingTable
-
     {
-
         get
-
         {
-
             System.Data.DataTable dt = new System.Data.DataTable();
-
             dt.Columns.Add("STYLE", typeof(System.String)).Caption = "Programming Style";
-
             dt.Columns.Add("FUN", typeof(System.Int32)).Caption = "Fun";
-
             dt.Columns.Add("WORK", typeof(System.Int32)).Caption = "Work";
-
             dt.Rows.Add(new object[] { "Hand Coding", 30, 200 });
-
             dt.Rows.Add(new object[] { "Using the .NET Library", 300, 10 });
-
             dt.Rows.Add(new object[] { "Skipping Visualization", -50, 0 });
-
             return dt;
-
         }
-
     }
-
 </script>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head id="Head1" runat="server">
-
     <title>.NET Visualization Helper Sample</title>
-
 
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
 
-
     <script type='text/javascript'>
-
         google.load('visualization', '1', {'packages':['columnchart']});
-
         google.setOnLoadCallback(drawChart);
-
         function drawChart() {
-
             var data = new google.visualization.DataTable(fundata, 0.5);
-
             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-
             chart.draw(data, {title: 'Visualization Satisfaction', titleX: 'Programming method', titleY: 'Units'});
-
         }
-
     </script>
 
-
 </head>
-
 <body>
-
     <form id="form1" runat="server">
-
     <div>
-
         <div id='chart_div' style='width: 700px; height: 300px;'>
-
         </div>
-
     </div>
-
     </form>
-
 </body>
-
 </html>
-
 }}}
-
-
 
 
 See http://www.bortosky.com/samples/visualization.aspx for an on-line sample in action.
