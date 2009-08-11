@@ -31,19 +31,28 @@ using System.Data;
 using Bortosky.Google.Visualization.Columns;
 namespace Bortosky.Google.Visualization.Columns {
 	internal class NumberGoogleDataColumn : GoogleDataColumn {
-
+        System.Globalization.CultureInfo invariantCulture;
 		/// 
 		/// <param name="column"></param>
 		internal NumberGoogleDataColumn(DataColumn column): base(column){
-
+            this.invariantCulture = new System.Globalization.CultureInfo(string.Empty);
 		}
 
 		/// 
 		/// <param name="row"></param>
-		protected internal override string SerializedValue(DataRow row){
-
-			return row[subjectColumn].ToString();
-		}
+        protected internal override string SerializedValue(DataRow row)
+        {
+            if (row[subjectColumn] is System.DBNull)
+                return "null";
+            else
+                switch (subjectColumn.DataType.FullName)
+                {
+                    case "System.Decimal": return ((System.Decimal)row[subjectColumn]).ToString(invariantCulture);
+                    case "System.Double": return ((System.Double)row[subjectColumn]).ToString(invariantCulture);
+                    case "System.Single": return ((System.Single)row[subjectColumn]).ToString(invariantCulture);
+                    default: return row[subjectColumn].ToString();
+                }
+        }
 
 		protected internal override string GoogleDataType{
 			get{

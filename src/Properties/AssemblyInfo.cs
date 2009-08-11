@@ -28,4 +28,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Visualization")]
 [assembly: AssemblyCopyright("Copyright © 2009 Gary Bortosky")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("1.0.0.*")]
+[assembly: AssemblyVersion("1.1.0.*")]
