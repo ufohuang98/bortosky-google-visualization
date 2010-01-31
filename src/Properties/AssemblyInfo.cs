@@ -1,5 +1,5 @@
 ﻿///////////////////////////////////////////////////////////
-//  Copyright (c) 2009 Gary Bortosky. All rights reserved. 
+//  Copyright (c) 2009-2010 Gary Bortosky. All rights reserved. 
 // 
 //  This library is free software; you can redistribute it and/or modify it
 //  under the terms of the New BSD License, a copy of which should have
@@ -26,6 +26,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Gary Bortosky")]
 [assembly: AssemblyProduct("Visualization")]
-[assembly: AssemblyCopyright("Copyright © 2009 Gary Bortosky")]
+[assembly: AssemblyCopyright("Copyright © 2010 Gary Bortosky")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("1.1.0.*")]
+[assembly: AssemblyVersion("1.2.0.*")]

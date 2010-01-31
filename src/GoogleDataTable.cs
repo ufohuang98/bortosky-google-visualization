@@ -5,7 +5,7 @@
 //  Created on:      12-Feb-2009 5:20:03 PM
 //  Original author: Gary
 // 
-//  Copyright (c) 2009 Gary Bortosky. All rights reserved. 
+//  Copyright (c) 2009-2010 Gary Bortosky. All rights reserved. 
 // 
 //  This library is free software; you can redistribute it and/or modify it
 //  under the terms of the New BSD License, a copy of which should have
@@ -89,6 +89,25 @@ namespace Bortosky.Google.Visualization {
             writer.Write("]}");
             writer.Flush();
 		}
+
+        /// <summary>
+        /// Returns a string representation of the GoogleDataTable's JSON object
+        /// </summary>
+        public string GetJson()
+        {
+            string str;
+            using (var mem = new System.IO.MemoryStream())
+            {
+                WriteJson(mem);
+                mem.Position = 0;
+                using (var sr = new System.IO.StreamReader(mem))
+                {
+                    str = sr.ReadToEnd();
+                    sr.Close();
+                };
+            }
+            return str;
+        }
 
 	}//end GoogleDataTable
 
