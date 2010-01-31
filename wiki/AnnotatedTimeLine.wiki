@@ -39,7 +39,8 @@ The [http://code.google.com/apis/visualization/documentation/gallery/annotatedti
         }
     }
     
-</script>}}}
+</script>
+}}}
 
 Next, let's provide a helper method to create a GoogleDataTable and provide it for client-side use.
 Use the GetJson method to return the GoogleDataTable's JSON string value to the client page in a StartupScript.
