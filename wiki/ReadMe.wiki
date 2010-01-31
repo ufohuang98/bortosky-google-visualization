@@ -4,7 +4,6 @@
 
 = Introduction =
 
-<<<<<<< .mine
 
 Google Inc. did not develop the .NET Visualization helper library and is not responsible for it.
 The helper library writes a JSON [http://code.google.com/apis/visualization/documentation/reference.html#dataparam Google DataTable] from a System.Data.DataTable object.
