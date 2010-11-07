@@ -31,7 +31,10 @@ namespace Bortosky.Google.Visualization.Columns {
 
 		internal string SerializedColumnIdentifier{
 			get{
-                return string.Format("{{id: '{0}', label: '{1}', type: '{2}'}}", subjectColumn.ColumnName, string.IsNullOrEmpty(subjectColumn.Caption) ? subjectColumn.ColumnName : subjectColumn.Caption, this.GoogleDataType);
+                return string.Format("{{\"id\": \"{0}\", \"label\": \"{1}\", \"type\": \"{2}\"}}",
+                    subjectColumn.ColumnName,
+                    string.IsNullOrEmpty(subjectColumn.Caption) ? subjectColumn.ColumnName : subjectColumn.Caption, 
+                    this.GoogleDataType);
 			}
 		}
 

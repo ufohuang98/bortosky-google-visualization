@@ -29,7 +29,7 @@ namespace Bortosky.Google.Visualization.Columns {
 		/// <param name="row"></param>
 		protected internal override string SerializedValue(DataRow row){
 
-            return string.Format("'{0}'", row[subjectColumn].ToString().Replace("'", "\\'"));
+            return string.Format("\"{0}\"", row[subjectColumn].ToString().Replace("\"", "\\\""));
 		}
 
 		protected internal override string GoogleDataType{

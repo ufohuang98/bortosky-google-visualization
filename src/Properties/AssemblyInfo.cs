@@ -24,4 +24,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Visualization")]
 [assembly: AssemblyCopyright("Copyright © 2010 Gary Bortosky")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("1.2.0.*")]
+[assembly: AssemblyVersion("1.3.0.*")]
