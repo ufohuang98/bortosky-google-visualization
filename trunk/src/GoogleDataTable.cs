@@ -61,16 +61,16 @@ namespace Bortosky.Google.Visualization {
             this.columns = new List<GoogleDataColumn>();
             foreach (DataColumn c in this.subjectTable.Columns)
                 this.columns.Add(GoogleDataColumn.CreateGoogleDataColumn(c));
-            this.writer.Write("{cols: [");
+            this.writer.Write("{\"cols\": [");
             foreach (GoogleDataColumn gc in this.columns)
                 writer.Write("{0}{1}", colCount++ == 0 ? "" : ", ", gc.SerializedColumnIdentifier);
-            this.writer.Write("], rows: [");
+            this.writer.Write("], \"rows\": [");
             foreach (DataRow r in this.subjectTable.Rows)
             {
-                writer.Write("{0}{{c: [", rowCount++ == 0 ? "" : ", ");
+                writer.Write("{0}{{\"c\": [", rowCount++ == 0 ? "" : ", ");
                 colCount = 0;
                 foreach (GoogleDataColumn gc in this.columns)
-                    writer.Write("{0}{{v: {1}}}", colCount++ == 0 ? "" : ", ", gc.SerializedValue(r));
+                    writer.Write("{0}{{\"v\": {1}}}", colCount++ == 0 ? "" : ", ", gc.SerializedValue(r));
                 writer.Write("]}");
             }
             writer.Write("]}");
