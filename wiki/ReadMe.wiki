@@ -78,5 +78,3 @@ Several other sample files are included in the binary download.
   *  Using two visualizations on a single page
   *  Using this library in a AJAX application
 
-
-See http://www.bortosky.com/samples/visualization.aspx for an on-line sample in action.
