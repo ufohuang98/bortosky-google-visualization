@@ -94,5 +94,3 @@ The page uses [http://jquery.com JQuery] to retrieve the data table from the Vis
 </html>
 
 }}}
-
-See http://www.bortosky.com/samples/visualizationclient.htm for an on-line sample in action.
